@@ -4,17 +4,26 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      count: 0
+      count: 0,
+      value: 1
     }
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
+    this.reset = this.reset.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     
   }
   increment (){
-    this.setState({count: this.state.count + 1})
+    this.setState({count: this.state.count + this.state.value})
   }
   decrement (){
-    this.setState({count: this.state.count - 1})
+    this.setState({count: this.state.count - this.state.value})
+  }
+  reset(){
+    this.setState({count: 0} )
+  }
+  onChange(){
+    this.setState ({value: /*number*/})
   }
   render() {
     return (
@@ -27,7 +36,14 @@ class App extends Component {
     <h1>
       {this.state.count}
     </h1>
-
+    <button onClick = {this.reset}>
+      reset
+    </button>
+    <form >
+      <input onChange = {this.handleChange} type="number" >
+       
+      </input>
+    </form>
     </div>
     );
   }

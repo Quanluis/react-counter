@@ -22,27 +22,28 @@ class App extends Component {
   reset(){
     this.setState({count: 0} )
   }
-  onChange(){
-    this.setState ({value: /*number*/})
+  handleChange(e){
+    this.setState({value: +e.target.value});
   }
   render() {
     return (
     <div>
-    <button onClick = {this.increment}>
+    <div className ="form-group">
+    </div>
+    <button className = "btn-primary" onClick = {this.increment}>
       +
     </button>
-    <button onClick = {this.decrement}> -
+    <button className ="btn-primary" onClick = {this.decrement}> -
     </button>
     <h1>
       {this.state.count}
     </h1>
-    <button onClick = {this.reset}>
+    <button className = 'btn-primary' onClick = {this.reset}>
       reset
     </button>
     <form >
-      <input onChange = {this.handleChange} type="number" >
-       
-      </input>
+      <input className = "form-control" onChange = {this.handleChange}  value={this.state.value}/>
+    
     </form>
     </div>
     );

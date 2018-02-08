@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Email from './Email'
 
 class App extends Component {
   constructor(){
@@ -29,7 +30,11 @@ class App extends Component {
     return (
     <div>
     <div className ="form-group">
-    </div>
+    <form >
+      <input className = "form-control" onChange = {this.handleChange}  value={this.state.value}/>
+    
+    </form>
+    
     <button className = "btn-primary" onClick = {this.increment}>
       +
     </button>
@@ -38,13 +43,11 @@ class App extends Component {
     <h1>
       {this.state.count}
     </h1>
-    <button className = 'btn-primary' onClick = {this.reset}>
+    <button className = 'btn-danger' onClick = {this.reset}>
       reset
     </button>
-    <form >
-      <input className = "form-control" onChange = {this.handleChange}  value={this.state.value}/>
-    
-    </form>
+    </div>
+    <Email />
     </div>
     );
   }

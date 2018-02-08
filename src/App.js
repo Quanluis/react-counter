@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Email from './Email'
+import LoginForm from './LoginForm'
 
 class App extends Component {
   constructor(){
@@ -48,6 +49,7 @@ class App extends Component {
     </button>
     </div>
     <Email />
+    <LoginForm />
     </div>
     );
   }
